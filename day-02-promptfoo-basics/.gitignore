@@ -1,5 +1,6 @@
 # API Keys & Secrets
 **/.env
+*.env
 
 # Node modules (if you install anything with npm)
 node_modules/
