@@ -1,0 +1,10 @@
+# promptfooconfig.yaml
+description: "File-based prompt demo"
+providers:
+  - id: openai:gpt-4o
+  - id: anthropic:messages:claude-sonnet-4-20250514 # commercial                      
+
+prompts: 
+  - "{{question}}"
+
+tests: file://file.csv

@@ -1,15 +1,19 @@
 # promptfooconfig.yaml
 description: "File-based prompt demo"
 providers:
-  - openai:gpt-4o                                 # OpenAI model ID
-  - anthropic:messages:claude-sonnet-4-20250514   # Claude Sonnet model ID
+  - file://providers/providernames.yaml                       
 
 prompts:
   # Each entry pulls a template from an external text file in ./prompts
-  - file://prompts/customer_service.txt
-  - file://prompts/technical_support.txt
+  # - file://prompts/customer_service.txt
+  # - file://prompts/technical_support.txt
+  - file://prompts/costs.txt
 
 tests:
+  # - file://tests/tests.yaml
   - vars:
-      company: "Engenious University"
-      query: "What is your refund policy for cancelled courses?"
+      character_name: "Alice"
+      magical_item: "carpet"
+      place: "Elora"
+      problem: "lost in the woods"
+      ending: "happy"

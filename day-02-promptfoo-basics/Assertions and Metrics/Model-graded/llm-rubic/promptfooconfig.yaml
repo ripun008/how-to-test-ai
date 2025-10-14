@@ -1,11 +1,14 @@
-description: "Model-graded – llm-rubric (tweet under 50 words)"
+description: "Model-graded - llm-rubric (tweet under 50 words)"
 providers:
-  - openai:gpt-4o-mini
+  - id: openai:gpt-4o-mini
+  - id: anthropic:messages:claude-sonnet-4-20250514 # commercial
 
 prompts:
-  - "Write a tweet announcing our new AI product."
+  - "Write a tweet announcing our new AI product. Use 10 words or less and no emojis"
 
 tests:
   - assert:
+      # - type: word-count
+      #   lessThan: 50
       - type: llm-rubric
-        value: "Response is enthusiastic and under 50 words."
+        value: "Response is enthusiastic and <= 10 words."

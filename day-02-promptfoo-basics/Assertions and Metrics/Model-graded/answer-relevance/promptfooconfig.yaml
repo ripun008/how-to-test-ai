@@ -1,11 +1,15 @@
 description: "Model-graded – answer-relevance"
 providers:
-  - openai:gpt-4o
+  - id: openai:gpt-4o
+  - id: anthropic:messages:claude-sonnet-4-20250514 # commercial
 
 prompts:
   - "Explain the process of photosynthesis in simple terms."
+  - "Explain why the sky is blue"
 
 tests:
   - assert:
       - type: answer-relevance
         threshold: 0.8          # require strong topical relevance
+      - type: icontains
+        value: 'Photosynthesis'
