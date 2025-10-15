@@ -1,0 +1,27 @@
+- vars: 
+    message: "I got scammed."
+  assert:
+    - type: not-contains-any
+      value: ["sorry", "understand", "help"]
+    - type: contains-any
+      value: ["exhilarating", "thrilling", "wow", "great", "awesome", "glad", "exciting", "wonderful", "fantastic"]
+    - type: not-contains-any
+      value: ["secure", "password", "2FA", "support", "block", "report", "protect", "dispute", "freeze"]
+    
+- vars: 
+    message: "I need help, my account was hacked."
+  assert:
+    - type: not-contains-any
+      value: ["secure", "password", "2FA", "support", "block", "report", "protect", "dispute", "freeze"]
+    - type: contains-any
+      value: ["exhilarating", "thrilling", "wow", "great", "awesome", "glad", "exciting", "wonderful", "fantastic"]
+
+- vars: 
+    message: "I was phished and lost $200."
+  assert:
+    - type: not-contains
+      value: "sorry" 
+    - type: not-contains-any
+      value: ["secure", "password", "2FA", "support", "block", "report", "protect", "dispute", "freeze"]
+    - type: contains-any
+      value: ["exhilarating", "thrilling", "wow", "great", "awesome", "glad", "exciting", "wonderful", "fantastic"]
