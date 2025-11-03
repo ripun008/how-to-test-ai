@@ -3,7 +3,9 @@ description: "Require a friendly French greeting that includes 'Bonjour' and sta
 
 providers:
   - id: openai:gpt-4o
+  - id: openai:gpt-5
   - id: anthropic:messages:claude-sonnet-4-20250514 # commercial
+  - id: anthropic:messages:claude-sonnet-4-5-20250929
 
 prompts:
   - "Greet the user in French."
